@@ -30,14 +30,14 @@ export default {
     copy({
       targets: [
         {
-          src: "src/variables.scss",
+          src: "src/variables.less",
           dest: "build",
-          rename: "variables.scss"
+          rename: "variables.less"
         },
         {
-          src: "src/typography.scss",
+          src: "src/typography.less",
           dest: "build",
-          rename: "typography.scss"
+          rename: "typography.less"
         }
       ]
     })
