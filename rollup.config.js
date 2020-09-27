@@ -1,11 +1,11 @@
 import peerDepsExternal from "rollup-plugin-peer-deps-external";
 import commonjs from "@rollup/plugin-commonjs";
 import typescript from "rollup-plugin-typescript2";
-import sass from "rollup-plugin-sass";
+import less from "rollup-plugin-less";
 import copy from "rollup-plugin-copy";
 
 export default {
-  input: ["src/index.ts", "src/TestComponent/index.ts"],
+  input: ["src/index.ts", "src/Button/index.ts"],
   output: [
     {
       dir: "build",
@@ -18,20 +18,20 @@ export default {
     peerDepsExternal(),
     commonjs(),
     typescript({ useTsconfigDeclarationDir: true }),
-    sass({
+    less({
       insert: true
     }),
     copy({
       targets: [
         {
-          src: "src/variables.scss",
+          src: "src/variables.less",
           dest: "build",
-          rename: "variables.scss"
+          rename: "variables.less"
         },
         {
-          src: "src/typography.scss",
+          src: "src/typography.less",
           dest: "build",
-          rename: "typography.scss"
+          rename: "typography.less"
         }
       ]
     })
